@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: parking-rate-service
+
+server:
+  port: 5000
+  servlet:
+    context-path: /parking
+
+management:
+  endpoint:
+    configprops:
+      keys-to-sanitize:
+      - managerPwd
+      - password
+      - secret
+      - key
+      - token
+      - .*credentials.*
+      - vcap_services
+      - sun.java.command
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+

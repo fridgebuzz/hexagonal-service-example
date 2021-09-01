@@ -8,9 +8,9 @@
 		<version>2.5.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.fridgebuzz.spothero</groupId>
-	<artifactId>parking-rate-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<groupId>com.spothero</groupId>
+	<artifactId>parking-service</artifactId>
+	<version>1.0.0</version>
 	<name>Parking Rate Service</name>
 	<description>Take Home Assignment for SpotHero</description>
 	<properties>
