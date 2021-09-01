@@ -23,11 +23,11 @@ This will run all tests, including integration tests. To skip these, use:
 
 To run the resulting service locally, use:
 
-`java -Dparking.rate.location="<location-of-startup-rates>.json" "-jar <path-to-jar-file>/<jar-file-name>.jar`
+`java -Dparking.rate.location=<location-of-startup-rates>.json -jar <path-to-jar-file>/<jar-file-name>.jar`
 
 For example, if running from the project directory:
 
-`java -Dparking.rate.location="src/main/resources/rates.json" -jar target/parking-service-1.0.0.jar`
+`java -Dparking.rate.location=src/main/resources/rates.json -jar target/parking-service-1.0.0.jar`
 
 If no location is provided for an initial file of rates, it will be loaded from `src/main/resources/rates.json` if possible.
 
@@ -65,7 +65,7 @@ Both of these examples will use the initial rates.json file in `src/main/resourc
 
 All endpoints are relative to:
 
-`http://localhost:5000/parking`
+`http://localhost:5000/`
 
 ## Rates
 
@@ -169,24 +169,24 @@ For example:
 GET /price?start=2015-07-01T07:00:00-05:00&end=015-07-01T12:00:00-05:00
 ```
  
-If a price is found, it is returned as JSON
+If a price is found, it is returned as JSON with status `200 OK`
 
 ```
 {'price': 1750}
 ```
   
-If a price cannot be determined, the following is returned:
+If a price cannot be determined, the following is returned with status `404 Not Found`
 
 `unavailable`
 
-### Encoding of time offsets
-
-Since `+` in a URL (including a query parameter) will be turned into a space and result in a `400 Bad Request` result, 
+>### Encoding of time offsets
+>
+>Since `+` in a URL (including a query parameter) will be turned into a space and result in a `400 Bad Request` result, 
 characters must be percent-encoded as `%2B`.
-
-For example:
-
-`2015-07-04T20:00:00+05:00` must be encoded to `2015-07-04T20:00:00%2B05:00`
+>
+>For example:
+>
+>`2015-07-04T20:00:00+05:00` must be encoded to `2015-07-04T20:00:00%2B05:00`
 
 ### Conditions for matching or failing to match a price
 
@@ -199,19 +199,24 @@ is based on date/times representing the same instant in time once the offset is 
 
 Prometheus-style metrics are available at:
 
-`GET actuator/prometheus`
+`GET /actuator/prometheus`
 
 In addition to a set of default JVM metrics, we can find count and timing information for endpoint requests. For example:
 
 - `http_server_requests_seconds_count` is the total number of requests the application received at this endpoint
 - `http_server_requests_seconds_sum` is the sum of the duration of every request the application received at this endpoint
+- `http_server_requests_seconds_max` is the maximum request duration during a time window (default window is 2 minutes)
+- `http_server_requests_seconds` with the tag `quantile="0.95"` is the slowest duration that 95% of requests are seeing
 
 Example output for the prometheus metrics endpoint itself look like this:
 
 ```
 http_server_requests_seconds_count{exception="None",method="GET",outcome="SUCCESS",status="200",uri="/actuator/prometheus",} 3.0
 http_server_requests_seconds_sum{exception="None",method="GET",outcome="SUCCESS",status="200",uri="/actuator/prometheus",} 0.047001569
+http_server_requests_seconds_max{exception="None",method="GET",outcome="SUCCESS",status="200",uri="/actuator/prometheus",} 0.027652642
+http_server_requests_seconds{exception="None",method="GET",outcome="SUCCESS",status="200",uri="/actuator/prometheus",quantile="0.95",} 0.027262976
 ```
+
 
 Tags show:
 - the exception, if any
@@ -221,3 +226,17 @@ Tags show:
 - the URI
 
 In conjunction with Prometheus (and Grafana for visualization) you can use the tags to view only the metrics you wish (such as the number of errors, etc.) 
+  
+## Swagger API Documentation
+
+Swagger API definitions are available in JSON at:
+
+`http://localhost:5000/v3/api-docs`
+
+or in YAML at:
+
+`http://localhost:5000/v3/api-docs.yaml`
+
+A Swagger UI is available at:
+
+`http://localhost:5000/swagger-ui`

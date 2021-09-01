@@ -53,7 +53,7 @@ public class RateServiceTest
 
     @Test
     public void loadInitialRatesFromSetProperty() throws IOException {
-        System.setProperty(RateService.PARKING_RATE_LOCATION, "src/test/resources/updateRates.json");
+        System.setProperty(RateService.PARKING_RATE_LOCATION, "src/test/resources/updatedRates.json");
         rateService.loadInitialRates();
         assertFalse(rateService.getRates().isEmpty());
     }

@@ -38,7 +38,7 @@ public class PriceControllerTest
                         .param("start", "2015-07-04T07:00:00+05:00")
                         .param("end", "2015-07-04T20:00:00+05:00"))
                     .andDo(print())
-                    .andExpect(status().isOk())
+                    .andExpect(status().isNotFound())
                     .andExpect(content().
                         string(containsString("unavailable"))) ;
     }

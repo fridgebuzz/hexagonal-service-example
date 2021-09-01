@@ -3,6 +3,8 @@ package com.spothero.parking.infrastructure.configuration;
 import com.spothero.parking.application.service.RateService;
 import com.spothero.parking.domain.repository.RateRepository;
 import com.spothero.parking.domain.service.PriceService;
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Info;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -17,5 +19,15 @@ public class BeanConfiguration
     @Bean
     PriceService priceService(RateRepository rateRepository) {
         return new PriceService(rateRepository);
+    }
+
+    @Bean
+    public OpenAPI customOpenAPI() {
+     return new OpenAPI()
+            .info(new Info()
+            .title("Parking API")
+            .version("1.0")
+            .description("This is an API for updating and querying parking rates.")
+            );
     }
 }

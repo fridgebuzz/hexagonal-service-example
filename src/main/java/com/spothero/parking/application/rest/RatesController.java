@@ -3,11 +3,16 @@ package com.spothero.parking.application.rest;
 import com.spothero.parking.application.message.RatesMessage;
 import com.spothero.parking.application.service.RateService;
 import com.spothero.parking.domain.Rate;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +21,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/rates")
+@Tag(name = "Rates API")
 public class RatesController
 {
     private final RateService rateService;
@@ -33,6 +39,10 @@ public class RatesController
      *
      * @param ratesMessage a JSON representation of a collection of rates
      */
+    @Operation(summary = "Replace all current parking rates")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Rates updated successfully")
+    })
     @PutMapping (consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public void updateRates(@RequestBody RatesMessage ratesMessage) {
@@ -48,7 +58,15 @@ public class RatesController
      *
      * See src/main/resources/rates.json for an example response message
      */
+    @Operation(summary = "Get all current parking rates")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "All rates returned",
+                    content = {@Content(mediaType = "application/json",
+                    schema = @Schema(implementation = RatesMessage.class))
+        })
+    })
     @GetMapping (produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
     public @ResponseBody RatesMessage getRates()
     {
         List<Rate> rates = rateService.getRates();
@@ -58,13 +76,5 @@ public class RatesController
         }
         return new RatesMessage(rateMessages);
     }
-
-    // TODO
-    @ExceptionHandler (IOException.class)
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public void handleException(Exception exception) {
-        
-    }
-
 
 }

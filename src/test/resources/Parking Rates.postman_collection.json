@@ -144,6 +144,55 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Prometheus metrics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/parking/actuator/prometheus",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"parking",
+						"actuator",
+						"prometheus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OpenAPI JSON",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "OpenAPI YAML",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/v3/api-docs.yaml",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"v3",
+						"api-docs.yaml"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
