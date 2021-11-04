@@ -1,4 +1,4 @@
-package com.spothero.parking.application.rest;
+package com.fridgebuzz.parking.application.rest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

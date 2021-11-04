@@ -1,4 +1,4 @@
-package com.spothero.parking;
+package com.fridgebuzz.parking;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

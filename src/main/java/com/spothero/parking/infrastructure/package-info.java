@@ -3,4 +3,4 @@
  * configuration or Spring configuration. Besides, it also implements infrastructure-dependent interfaces from the
  * domain layer.
  */
-package com.spothero.parking.infrastructure;
+package com.fridgebuzz.parking.infrastructure;

@@ -4,4 +4,4 @@
  * the infrastructure part. On top of that, it should also contain interfaces that define the API to communicate with
  * external parts, like the database, which the domain interacts with.
  */
-package com.spothero.parking.domain;
+package com.fridgebuzz.parking.domain;

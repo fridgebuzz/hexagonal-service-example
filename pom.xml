@@ -8,11 +8,11 @@
 		<version>2.5.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.spothero</groupId>
-	<artifactId>parking-service</artifactId>
+	<groupId>com.fridgebuzz</groupId>
+	<artifactId>hexagonal-service-example</artifactId>
 	<version>1.0.0</version>
-	<name>Parking Rate Service</name>
-	<description>Take Home Assignment for SpotHero</description>
+	<name>Hexagonal Service Example</name>
+	<description>Simple service using Hexagonal architecture and various microservice frameworks</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>

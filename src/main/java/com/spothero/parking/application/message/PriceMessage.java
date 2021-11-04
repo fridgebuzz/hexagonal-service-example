@@ -1,11 +1,11 @@
-package com.spothero.parking.application.message;
+package com.fridgebuzz.parking.application.message;
 
 import java.io.Serializable;
 
 /**
  * Representation of price response.
  *
- * @see com.spothero.parking.application.rest.PriceController
+ * @see com.fridgebuzz.parking.application.rest.PriceController
  */
 public class PriceMessage implements Serializable
 {

@@ -3,4 +3,4 @@
  * This area should contain things like user interfaces, RESTful controllers, and JSON serialization libraries.
  * It includes anything that exposes entry to our application and orchestrates the execution of domain logic.
  */
-package com.spothero.parking.application;
+package com.fridgebuzz.parking.application;

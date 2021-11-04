@@ -1,4 +1,4 @@
-package com.spothero.parking.domain;
+package com.fridgebuzz.parking.domain;
 
 /**
  * An enum to support the use of "mon", "tues", "wed" etc. in the rate requests and responses.

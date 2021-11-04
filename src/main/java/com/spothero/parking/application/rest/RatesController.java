@@ -1,8 +1,8 @@
-package com.spothero.parking.application.rest;
+package com.fridgebuzz.parking.application.rest;
 
-import com.spothero.parking.application.message.RatesMessage;
-import com.spothero.parking.application.service.RateService;
-import com.spothero.parking.domain.Rate;
+import com.fridgebuzz.parking.application.message.RatesMessage;
+import com.fridgebuzz.parking.application.service.RateService;
+import com.fridgebuzz.parking.domain.Rate;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;

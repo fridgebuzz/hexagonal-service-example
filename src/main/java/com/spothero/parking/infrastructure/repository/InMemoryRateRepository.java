@@ -1,8 +1,8 @@
 
-package com.spothero.parking.infrastructure.repository;
+package com.fridgebuzz.parking.infrastructure.repository;
 
-import com.spothero.parking.domain.Rate;
-import com.spothero.parking.domain.repository.RateRepository;
+import com.fridgebuzz.parking.domain.Rate;
+import com.fridgebuzz.parking.domain.repository.RateRepository;
 import org.springframework.stereotype.Component;
 
 import java.time.DayOfWeek;

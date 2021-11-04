@@ -1,6 +1,6 @@
-package com.spothero.parking.domain.repository;
+package com.fridgebuzz.parking.domain.repository;
 
-import com.spothero.parking.domain.Rate;
+import com.fridgebuzz.parking.domain.Rate;
 
 import java.time.DayOfWeek;
 import java.util.List;

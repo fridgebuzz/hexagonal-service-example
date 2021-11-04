@@ -1,6 +1,6 @@
-package com.spothero.parking.application.message;
+package com.fridgebuzz.parking.application.message;
 
-import com.spothero.parking.domain.Rate;
+import com.fridgebuzz.parking.domain.Rate;
 import org.junit.jupiter.api.Test;
 
 import java.time.DayOfWeek;

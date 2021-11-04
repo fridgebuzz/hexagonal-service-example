@@ -1,4 +1,4 @@
-package com.spothero.parking.application.rest;
+package com.fridgebuzz.parking.application.rest;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

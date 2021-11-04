@@ -1,9 +1,9 @@
-package com.spothero.parking.application.service;
+package com.fridgebuzz.parking.application.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.spothero.parking.application.message.RatesMessage;
-import com.spothero.parking.domain.Rate;
-import com.spothero.parking.domain.repository.RateRepository;
+import com.fridgebuzz.parking.application.message.RatesMessage;
+import com.fridgebuzz.parking.domain.Rate;
+import com.fridgebuzz.parking.domain.repository.RateRepository;
 
 import javax.annotation.PostConstruct;
 import java.io.File;

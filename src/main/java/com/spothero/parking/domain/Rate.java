@@ -1,4 +1,4 @@
-package com.spothero.parking.domain;
+package com.fridgebuzz.parking.domain;
 
 import java.time.DayOfWeek;
 import java.time.OffsetTime;

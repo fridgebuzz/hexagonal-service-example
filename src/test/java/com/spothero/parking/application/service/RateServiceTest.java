@@ -1,7 +1,7 @@
-package com.spothero.parking.application.service;
+package com.fridgebuzz.parking.application.service;
 
-import com.spothero.parking.domain.Rate;
-import com.spothero.parking.infrastructure.repository.InMemoryRateRepository;
+import com.fridgebuzz.parking.domain.Rate;
+import com.fridgebuzz.parking.infrastructure.repository.InMemoryRateRepository;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

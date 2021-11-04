@@ -1,8 +1,8 @@
-package com.spothero.parking.domain.service;
+package com.fridgebuzz.parking.domain.service;
 
-import com.spothero.parking.domain.Rate;
-import com.spothero.parking.domain.repository.RateRepository;
-import com.spothero.parking.infrastructure.repository.InMemoryRateRepository;
+import com.fridgebuzz.parking.domain.Rate;
+import com.fridgebuzz.parking.domain.repository.RateRepository;
+import com.fridgebuzz.parking.infrastructure.repository.InMemoryRateRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

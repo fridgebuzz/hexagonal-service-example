@@ -1,4 +1,4 @@
-package com.spothero.parking.domain.service;
+package com.fridgebuzz.parking.domain.service;
 
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;

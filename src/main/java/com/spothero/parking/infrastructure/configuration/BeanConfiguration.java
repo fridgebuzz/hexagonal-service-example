@@ -1,8 +1,8 @@
-package com.spothero.parking.infrastructure.configuration;
+package com.fridgebuzz.parking.infrastructure.configuration;
 
-import com.spothero.parking.application.service.RateService;
-import com.spothero.parking.domain.repository.RateRepository;
-import com.spothero.parking.domain.service.PriceService;
+import com.fridgebuzz.parking.application.service.RateService;
+import com.fridgebuzz.parking.domain.repository.RateRepository;
+import com.fridgebuzz.parking.domain.service.PriceService;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
 import org.springframework.context.annotation.Bean;

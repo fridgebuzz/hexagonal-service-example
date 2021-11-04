@@ -1,7 +1,7 @@
-package com.spothero.parking.application.message;
+package com.fridgebuzz.parking.application.message;
 
-import com.spothero.parking.domain.Day;
-import com.spothero.parking.domain.Rate;
+import com.fridgebuzz.parking.domain.Day;
+import com.fridgebuzz.parking.domain.Rate;
 
 import java.io.Serializable;
 import java.time.*;
@@ -11,7 +11,7 @@ import java.util.*;
 /**
  * Representation of a collection of parking rates.
  *
- * @see com.spothero.parking.application.rest.RatesController
+ * @see com.fridgebuzz.parking.application.rest.RatesController
  */
 public class RatesMessage implements Serializable
 {
