@@ -7,11 +7,11 @@ import java.util.List;
 
 public class Rate
 {
-    private List<DayOfWeek> days;
-    private OffsetTime start;
-    private OffsetTime end;
-    private ZoneId zoneId;
-    private int price;
+    final private List<DayOfWeek> days;
+    final private OffsetTime start;
+    final private OffsetTime end;
+    final private ZoneId zoneId;
+    final private int price;
 
 
     public Rate(List<DayOfWeek> days, OffsetTime start, OffsetTime end, ZoneId zoneId, int price)

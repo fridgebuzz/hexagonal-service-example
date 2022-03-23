@@ -48,6 +48,7 @@ public class InMemoryRateRepository implements RateRepository
     @Override
     public SortedSet<Rate> findByDayOfWeek(DayOfWeek dayOfWeek)
     {
-        return rates.get(dayOfWeek);
+        SortedSet<Rate> ratesForDay = rates.get(dayOfWeek);
+        return ratesForDay != null ? ratesForDay : new TreeSet<>(Comparator.comparing(Rate::getStart));
     }
 }

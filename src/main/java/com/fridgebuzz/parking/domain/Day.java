@@ -40,6 +40,6 @@ public enum Day
         if (dayOfWeek < 1 || dayOfWeek > 7) {
             throw new IllegalArgumentException("Invalid value for Day: " + dayOfWeek);
         }
-        return Day.values()[dayOfWeek - 1];
+        return values()[dayOfWeek - 1];
     }
 }
